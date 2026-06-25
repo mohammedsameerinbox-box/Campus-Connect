@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Applications</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>My Applications</h1>
+
+<table border="1">
+    <tr>
+        <th>Company</th>
+        <th>Student Name</th>
+    </tr>
+
+    {% for app in applications %}
+    <tr>
+        <td>{{ app.company }}</td>
+        <td>{{ app.student_name }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+
+<a href="/dashboard" class="back-btn">
+    ⬅️ Back to Dashboard
+</a>
+</body>
+</html>

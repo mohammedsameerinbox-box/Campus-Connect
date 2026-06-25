@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Admin Dashboard</h1>
+
+<div class="card">
+    <h3>Total Students</h3>
+    <h2>{{ total_students }}</h2>
+</div>
+
+<div class="card">
+    <h3>Total Companies</h3>
+    <h2>{{ total_companies }}</h2>
+</div>
+
+<div class="card">
+    <h3>Total Applications</h3>
+    <h2>{{ total_applications }}</h2>
+</div>
+
+<div class="card">
+    <a href="/addcompany">➕ Add Company</a>
+</div>
+
+<div class="card">
+    <a href="/viewcompanies">🏢 View Companies</a>
+</div>
+
+<div class="card">
+    <a href="/searchcompany">🔍 Search Company</a>
+</div>
+
+<div class="card">
+    <a href="/viewstudents">👨‍🎓 View Students</a>
+</div>
+
+<div class="card">
+    <a href="/viewapplications">📄 View Applications</a>
+</div>
+
+</body>
+</html>

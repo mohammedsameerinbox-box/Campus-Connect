@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Companies</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <a href="/dashboard" class="back-btn">
+    ⬅️ Back to Dashboard
+    
+</a>
+
+<h1>🏢 Companies</h1>
+
+{% for company in companies %}
+
+<div class="card">
+
+    <h2>🏢 {{ company.company_name }}</h2>
+
+    <p>📍 {{ company.location }}</p>
+
+    <a href="/deletecompany/{{ company.id }}">
+        <button>🗑️ Delete Company</button>
+
+        
+    </a>
+
+</div>
+
+{% endfor %}
+
+</body>
+</html>

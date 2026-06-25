@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Company</title>
+</head>
+<body>
+
+<h1>🔍 Search Company</h1>
+
+<form method="POST">
+
+    <input type="text"
+           name="keyword"
+           placeholder="Enter Company Name">
+
+    <button type="submit">
+        Search
+    </button>
+
+</form>
+
+<br>
+
+{% for company in companies %}
+
+<div>
+
+    <h2>🏢 {{ company.company_name }}</h2>
+
+    <p>📍 {{ company.location }}</p>
+
+    <hr>
+    <a href="/dashboard" class="back-btn">
+    ⬅️ Back to Dashboard
+</a>
+
+</div>
+
+{% endfor %}
+
+</body>
+</html>

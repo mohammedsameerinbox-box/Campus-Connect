@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Students</title>
+    <link rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="welcome-card">
+    <h1>👨‍🎓 Registered Students</h1>
+    <p>Manage all registered students in Campus Connect</p>
+</div>
+<form method="GET">
+
+    <input type="text"
+           name="search"
+           placeholder="Search Student Name">
+
+    <button type="submit">
+        🔍 Search
+    </button>
+
+</form>
+
+<br>
+
+{% for student in students %}
+
+<div class="card">
+
+    <h2>{{ student.fullname }}</h2>
+
+    <p>📧 {{ student.email }}</p>
+
+    <p>🏫 {{ student.college }}</p>
+
+    <a href="/deletestudent/{{ student.id }}">
+        <button>🗑️ Delete Student</button>
+        <a href="/dashboard" class="back-btn">
+    ⬅️ Back to Dashboard
+</a>
+    </a>
+
+</div>
+
+    <hr>
+
+</div>
+
+{% endfor %}
+
+</body>
+</html>
